@@ -16,12 +16,18 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
     @Override
-    public void onCreate(SQLiteDatabase db) { // db 생성될 때 호출
-        db.execSQL("CREATE TABLE IF NOT EXISTS StairList (id INTEGER PRIMARY KEY AUTOINCREMENT, content TEXT NOT NULL, postDate TEXT NOT NULL, picture TEXT NOT NULL)"); // SQL query 문 들어가는 곳
+    public void onCreate(SQLiteDatabase db) { // db 생성될 때 호출, SQL query 문 넣기
+        db.execSQL("CREATE TABLE IF NOT EXISTS StairList (id INTEGER PRIMARY KEY AUTOINCREMENT, postDate TEXT NOT NULL, content TEXT NOT NULL, picture TEXT NOT NULL)");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         onCreate(db);
+    }
+
+    // INSERT
+    public void insertPost(String _postDate, String _content, String _picture){
+        SQLiteDatabase db = getWritableDatabase();
+        db.execSQL("INSERT INTO StairList (postDate, content, picture) VALUES('" + _postDate + "','" + _content + "','" + _picture +"');");
     }
 }
