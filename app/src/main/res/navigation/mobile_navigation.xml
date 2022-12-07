@@ -12,14 +12,14 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.cookandroid.upstair_alpha.ui.dashboard.DashboardFragment"
+        android:id="@+id/navigation_management"
+        android:name="com.cookandroid.upstair_alpha.ui.Management.ManagementFragment"
         android:label="@string/title_management"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_management" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.cookandroid.upstair_alpha.ui.notifications.NotificationsFragment"
+        android:id="@+id/navigation_coin"
+        android:name="com.cookandroid.upstair_alpha.ui.Coin.CoinFragment"
         android:label="@string/title_coin"
-        tools:layout="@layout/fragment_notifications" />
+        tools:layout="@layout/fragment_coin" />
 </navigation>

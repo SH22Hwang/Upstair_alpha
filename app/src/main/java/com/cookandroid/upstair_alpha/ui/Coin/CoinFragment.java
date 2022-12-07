@@ -1,27 +1,26 @@
-package com.cookandroid.upstair_alpha.ui.notifications;
+package com.cookandroid.upstair_alpha.ui.Coin;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.cookandroid.upstair_alpha.databinding.FragmentNotificationsBinding;
+import com.cookandroid.upstair_alpha.databinding.FragmentCoinBinding;
 
-public class NotificationsFragment extends Fragment {
+public class CoinFragment extends Fragment {
 
-    private FragmentNotificationsBinding binding;
+    private FragmentCoinBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        NotificationsViewModel notificationsViewModel =
-                new ViewModelProvider(this).get(NotificationsViewModel.class);
+        CoinViewModel coinViewModel =
+                new ViewModelProvider(this).get(CoinViewModel.class);
 
-        binding = FragmentNotificationsBinding.inflate(inflater, container, false);
+        binding = FragmentCoinBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
 //        final TextView textView = binding.textNotifications;

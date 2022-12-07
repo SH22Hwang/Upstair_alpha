@@ -1,14 +1,14 @@
-package com.cookandroid.upstair_alpha.ui.notifications;
+package com.cookandroid.upstair_alpha.ui.Coin;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class NotificationsViewModel extends ViewModel {
+public class CoinViewModel extends ViewModel {
 
     private final MutableLiveData<String> mText;
 
-    public NotificationsViewModel() {
+    public CoinViewModel() {
         mText = new MutableLiveData<>();
         mText.setValue("This is notifications fragment");
     }
