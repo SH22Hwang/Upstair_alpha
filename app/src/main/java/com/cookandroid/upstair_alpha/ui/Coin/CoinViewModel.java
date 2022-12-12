@@ -6,14 +6,29 @@ import androidx.lifecycle.ViewModel;
 
 public class CoinViewModel extends ViewModel {
 
-    private final MutableLiveData<String> mText;
+    private final MutableLiveData<Double> curCoin;
+    private final MutableLiveData<String> curCoinToString;
+
+    private double COIN = 0.0;
 
     public CoinViewModel() {
-        mText = new MutableLiveData<>();
-        mText.setValue("This is notifications fragment");
+        curCoin = new MutableLiveData<>();
+        curCoinToString = new MutableLiveData<>();
+        curCoin.setValue(0.0);
     }
 
-    public LiveData<String> getText() {
-        return mText;
+    public void incCoin(double c) {
+        COIN += c;
+        curCoin.setValue(COIN);
     }
+
+    public LiveData<Double> getCurCoin() {
+        return curCoin;
+    }
+
+    public LiveData<String> getCurCoinToString() {
+        curCoinToString.setValue(Double.toString(COIN));
+        return curCoinToString;
+    }
+
 }

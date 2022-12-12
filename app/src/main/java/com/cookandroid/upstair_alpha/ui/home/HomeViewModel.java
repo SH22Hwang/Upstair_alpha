@@ -6,20 +6,28 @@ import androidx.lifecycle.ViewModel;
 
 public class HomeViewModel extends ViewModel {
 
-//    private final MutableLiveData<String> mText;
-private MutableLiveData<String> curSteps;
-private int CUR_STEPS = 0;
+    private final MutableLiveData<Integer> curSteps;
+    private final MutableLiveData<String> curStepsToString;
+
+    private int CUR_STEPS = 0;
 
     public HomeViewModel() {
         curSteps = new MutableLiveData<>();
-        curSteps.setValue(String.valueOf(CUR_STEPS));
-    }
-
-    public LiveData<String> getText() {
-        return curSteps;
+        curStepsToString = new MutableLiveData<>();
+        curSteps.setValue(0);
     }
 
     public void incCurSteps() {
         CUR_STEPS++;
+        curSteps.setValue(CUR_STEPS);
+    }
+
+    public LiveData<Integer> getCurSteps() {
+        return curSteps;
+    }
+
+    public LiveData<String> getCurStepsToString() {
+        curStepsToString.setValue(Integer.toString(CUR_STEPS));
+        return curStepsToString;
     }
 }
